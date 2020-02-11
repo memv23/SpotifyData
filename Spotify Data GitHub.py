@@ -7,15 +7,11 @@ import re
 ##################################################
 
 
-
-
 # Load JSON File
 ##################################################
 with open('StreamingHistory.json','r',encoding='utf8') as f:
     data = json.load(f)
 ##################################################
-
-
 
 
 # Initialize Lists
@@ -45,15 +41,11 @@ for i in range(len(data)):
 ##################################################
 
 
-
-
 # Prepare data for CSV file
 ##################################################
 x = [endTime,artistName,trackName,msPlayed]
 x_data = zip_longest(*x,fillvalue = '')
 ##################################################
-
-
 
 
 # Write data to CSV file
@@ -64,4 +56,3 @@ with open('SpotifyData.csv','w',encoding="utf8",newline='') as f2:
     wr.writerows(x_data)
 f2.close()
 ##################################################
-
